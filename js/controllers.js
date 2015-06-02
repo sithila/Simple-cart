@@ -27,13 +27,27 @@ app.config(function($routeProvider) {
             // route for the contact page
             .when('/blog', {
                 templateUrl : 'pages/blog.php',
-                controller  : 'customersCtrl'
+                controller  : 'blogCtrl'
             });
     });
 
 app.controller('aboutController', function($scope, $http) {
         $scope.message = 'Look! I am an about page.';
     });
+	
+app.controller('blogCtrl', function($scope, $http) {
+	
+	 $scope.selectedCountry = null;
+    $scope.contries = [];
+
+	
+       $http.get('https://restcountries.eu/rest/v1/all').
+        success(function(data) {
+            $scope.contries = data;
+			//alert($scope.contries);
+        });
+    });	
+	
 app.controller('cartController', function($scope, $http, $templateCache) {
         $templateCache.removeAll();
     });	
@@ -64,8 +78,14 @@ alert(data.records)
 		
 		
     });	
+
+	
 	
 app.controller('customersCtrl', function($scope, $http) {
+	
+	
+	
+	
    $http.get("search.php")
    .success(function (response) {
 					  $scope.names = response.records;
@@ -110,7 +130,7 @@ $scope.moreinfo = function(PCode, $index) {
     
 
     $scope.names2 = data.records;
-	alert(FormData.Code);
+	//alert($scope.names2);
 	$http({
   method  : 'POST',
   url     : 'imagesearch.php',

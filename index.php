@@ -28,6 +28,7 @@ setlocale(LC_MONETARY,"en_US"); // US national format (see : http://php.net/mone
 
 <section class="section header"> <span class="icon header-expand-icon"></span>
   <div class="inner-wrapper" >
+ 
     <nav>
       <ul class="left-nav">
         <li><a href="#/">Products</a></li>

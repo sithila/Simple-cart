@@ -117,19 +117,19 @@ form .form-row button {
   position: absolute;
   width: 50px;
   height: 50px;
-  background: #cccccc;
+  background-position: -234px 4px;
   left: 0px;
-  top: 0px;
+  top: 50%;
   z-index: 99999;
 }
 
 .carosel-right {
   position: absolute;
   right: 0px;
-  top: 0px;
+  top: 50%;
   width: 50px;
   height: 50px;
-  background: #cccccc;
+  background-position: -194px 4px;
   z-index: 99999;
 }
 
@@ -329,8 +329,18 @@ form .form-row button {
   display: block !important;
 }
 
-.icon {
+.icon, .carosel-right, .carosel-left {
   background-image: url(../img/icon-sprite.png);
+}
+
+.icon2x, .carosel-right, .carosel-left {
+  background-image: url(../img/svg.svg);
+}
+
+.icon2x {
+  width: 50px;
+  height: 50px;
+  display: block;
 }
 
 .icon {
